@@ -1,0 +1,24 @@
+.item-container {
+    display: inline-flex;
+    margin: 20px 30px;
+}
+.new-item-input {
+    width: 85%
+}
+.new-item-button {
+    width: 14%;
+}
+.remove-item-button {
+    margin: 0 10px;
+    height: 30px;
+    align-self: center;
+}
+.form {
+    margin: 0 0 20px 0;
+    width: 900px;
+}
+.noItems {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 13px;
+    text-align: center;
+}

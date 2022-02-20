@@ -1,0 +1,16 @@
+.item {
+    position: relative;
+    width: 800px;
+    height: 100px;
+    border-radius: 20px;
+    background-color: #faf9f9;
+    box-shadow: 0 4px 5px 0 rgba(27, 27, 27, 0.2), 0 6px 6px 0 rgba(27, 27, 27, 0.19);
+    /* background: linear-gradient(45deg, #1c53a7 40%, #0b2d75 60%); */
+}
+
+span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

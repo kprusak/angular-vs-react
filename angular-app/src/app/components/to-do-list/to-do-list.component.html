@@ -1,0 +1,15 @@
+<div class="form">
+    <input class="new-item-input" type="text" placeholder="Type task name..." [formControl]="itemToAdd" (keyup.enter)="addItem()">
+    <button class="new-item-button" (click)="addItem()">add item</button>    
+</div>
+<div *ngIf="toDoItems.length>0; else noItems">
+    <div class="item-container" *ngFor="let item of toDoItems; let i = index">
+        <app-to-do-list-item [item]="item"></app-to-do-list-item>
+        <button class="remove-item-button" (click)="removeItem(i)">x</button>
+    </div>
+</div>
+<ng-template #noItems>
+    <div class="noItems">
+        Add the first item using form above.
+    </div>
+</ng-template>
