@@ -1,0 +1,82 @@
+
+<div class="factory-container">
+    <p class="header"><b>Component factory</b></p>
+    <p>Use buttons below to create, edit or remove components</p>
+    <p>Components number: {{componentsData.length}} <button (click)="reset()" *ngIf="componentsData.length!==0">Reset</button></p>
+    
+    <p class="subheader"><b>Text content components</b></p>
+    <p>Creating</p>
+    <div class="buttons">
+        <button (click)="createComponents(100, 'text')">Create 100 components</button>
+        <button (click)="createComponents(1000, 'text')">Create 1000 components</button>
+        <button (click)="createComponents(10000, 'text')">Create 10000 components</button>
+        <button (click)="createComponents(100000, 'text')">Create 100000 components</button>
+    </div>
+    <p>Editing</p>
+    <div class="buttons">
+        <button (click)="editComponents(100, 'text')">Edit 100 components</button>
+        <button (click)="editComponents(1000, 'text')">Edit 1000 components</button>
+        <button (click)="editComponents(10000, 'text')">Edit 10000 components</button>
+        <button (click)="editComponents(100000, 'text')">Edit 100000 components</button>
+    </div>
+    <p>Removing</p>
+    <div class="buttons">
+        <button (click)="removeComponents(100)">Remove 100 components</button>
+        <button (click)="removeComponents(1000)">Remove 1000 components</button>
+        <button (click)="removeComponents(10000)">Remove 10000 components</button>
+        <button (click)="removeComponents(100000)">Remove 100000 components</button>
+    </div>
+
+    <p class="subheader"><b>Graphic content components</b></p>
+    <p>Creating</p>
+    <div class="buttons">
+        <button (click)="createComponents(100, 'graphic')">Create 100 components</button>
+        <button (click)="createComponents(1000, 'graphic')">Create 1000 components</button>
+        <button (click)="createComponents(10000, 'graphic')">Create 10000 components</button>
+        <button (click)="createComponents(100000, 'graphic')">Create 100000 components</button>
+    </div>
+    <p>Editing</p>
+    <div class="buttons">
+        <button (click)="editComponents(100, 'graphic')">Edit 100 components</button>
+        <button (click)="editComponents(1000, 'graphic')">Edit 1000 components</button>
+        <button (click)="editComponents(10000, 'graphic')">Edit 10000 components</button>
+        <button (click)="editComponents(100000, 'graphic')">Edit 100000 components</button>
+    </div>
+    <p>Removing</p>
+    <div class="buttons">
+        <button (click)="removeComponents(100)">Remove 100 components</button>
+        <button (click)="removeComponents(1000)">Remove 1000 components</button>
+        <button (click)="removeComponents(10000)">Remove 10000 components</button>
+        <button (click)="removeComponents(100000)">Remove 100000 components</button>
+    </div>
+
+    <p class="subheader"><b>Mixed content components</b></p>
+    <p>Creating</p>
+    <div class="buttons">
+        <button (click)="createComponents(100, 'mixed')">Create 100 components</button>
+        <button (click)="createComponents(1000, 'mixed')">Create 1000 components</button>
+        <button (click)="createComponents(10000, 'mixed')">Create 10000 components</button>
+        <button (click)="createComponents(100000, 'mixed')">Create 100000 components</button>
+    </div>
+    <p>Editing</p>
+    <div class="buttons">
+        <button (click)="editComponents(100, 'mixed')">Edit 100 components</button>
+        <button (click)="editComponents(1000, 'mixed')">Edit 1000 components</button>
+        <button (click)="editComponents(10000, 'mixed')">Edit 10000 components</button>
+        <button (click)="editComponents(100000, 'mixed')">Edit 100000 components</button>
+    </div>
+    <p>Removing</p>
+    <div class="buttons">
+        <button (click)="removeComponents(100)">Remove 100 components</button>
+        <button (click)="removeComponents(1000)">Remove 1000 components</button>
+        <button (click)="removeComponents(10000)">Remove 10000 components</button>
+        <button (click)="removeComponents(100000)">Remove 100000 components</button>
+    </div>
+
+    <div class="components">
+        <div *ngFor="let componentData of componentsData">
+            <app-factory-test-item [componentData]="componentData"></app-factory-test-item>
+        </div>
+    </div>
+
+</div>
