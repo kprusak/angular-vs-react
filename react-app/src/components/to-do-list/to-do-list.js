@@ -38,7 +38,8 @@ export default class ToDoList extends React.Component {
             </div>
 
         return (
-            <div>
+            <div className="todo-container">
+                <p className="todo-header"><b>To-do list</b></p>
                 <div className="form">
                     <input className="new-item-input" type="text" placeholder="Type task name..." value={this.state.itemToAdd} onChange={this.handleInputChange}></input>
                     <button className="new-item-button" onClick={this.addItem}>add item</button>    

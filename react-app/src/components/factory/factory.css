@@ -1,0 +1,14 @@
+.factory-container {
+    margin-top: 40px;
+    width: 900px;
+    display: block;
+}
+
+.factory-header {
+    font-size: 30px;
+}
+
+.subheader {
+    font-size: 20px;
+    margin-top: 80px;
+}

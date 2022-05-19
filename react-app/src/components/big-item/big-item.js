@@ -6,8 +6,13 @@ export default class BigItem extends React.Component {
     render() {
         return (
             <div>
-                <img src={image} alt="big item"  width="1500px" height='900px' />
-                <a href="https://www.freepik.com/photos/pizza-table">Pizza table photo created by Racool_studio - www.freepik.com</a>
+                <div>
+                    <img src={image} alt="big item" width="1500px" height='900px' />
+                </div>
+                <div className="credits">
+                    Graphical components credits:
+                    <a href="https://www.freepik.com/photos/pizza-table">Pizza table photo created by Racool_studio - www.freepik.com</a>
+                </div>
             </div>
         );
     }
