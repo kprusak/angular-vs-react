@@ -12,18 +12,18 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 70px;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(45deg, #0b2d75 40%, #1c53a7 60%);
+    background: linear-gradient(45deg, #d20023 40%, #8c0909 60%);
     color: white;
     font-weight: 600;
   }
   
   .title {
-    font-size: 20px;
+    font-size: 30px;
   }
   
   .content {
