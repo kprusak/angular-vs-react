@@ -7,12 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FactoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(){}
+  ngOnInit(): void {}
 
   componentsData: Array<{textContent?: string, graphicContent?: string}> = [];
-
-  ngOnInit(): void {
-  }
 
   createComponents(number: number, type: string) {
     console.log('started adding components')
@@ -53,20 +51,26 @@ export class FactoryComponent implements OnInit {
     console.log('started editing components');
     if(type=='text') {
       for(let i=0; i<number; i++) {
-        this.componentsData[i].textContent = 'are vr.nisinlitcrenumreeeumiealt  iuiavaulsa   metoe armsP  itdvmlruutrcmeume,sruem  i monentmtea ivadeiels n eu leeo ag sqo l o mrtfoplnsu euu alsotvuattn.n sgeaUq ilorsnceo euati ietaseliSlstbemtEem.leeriu.nr n.ueu utli ooeilu  ennlrd ase slsmm.tetnpeVp en laVrAumavrl,sdrcvbod ,gc r Amnrdsrnpvncilphrer esnmAaseiatsu.t o  ltmatmaiangieut snas.ev iiubtri auc cusd aansaeevoo a ecamoussil cpr i.issteolqcmiurlumnign. nuucoaicee,mec isueca,onutalpIe iinnlnl psei ndmiavla n.t,fe ptu  I s De ilia sdqvasa  ,p pl,  u ue  . usafeloe iiua autt ulul uo uar p';
+        let value = this.componentsData;
+        value[i].textContent = 'are vr.nisinlitcrenumreeeumiealt  iuiavaulsa   metoe armsP  itdvmlruutrcmeume,sruem  i monentmtea ivadeiels n eu leeo ag sqo l o mrtfoplnsu euu alsotvuattn.n sgeaUq ilorsnceo euati ietaseliSlstbemtEem.leeriu.nr n.ueu utli ooeilu  ennlrd ase slsmm.tetnpeVp en laVrAumavrl,sdrcvbod ,gc r Amnrdsrnpvncilphrer esnmAaseiatsu.t o  ltmatmaiangieut snas.ev iiubtri auc cusd aansaeevoo a ecamoussil cpr i.issteolqcmiurlumnign. nuucoaicee,mec isueca,onutalpIe iinnlnl psei ndmiavla n.t,fe ptu  I s De ilia sdqvasa  ,p pl,  u ue  . usafeloe iiua autt ulul uo uar p';
+        this.componentsData = value;
         console.log('edited component no.', i+1);
       }
     }
     else if (type=='graphic') {
       for(let i=0; i<number; i++) {
-        this.componentsData[i].graphicContent = '../../assets/blue-graphic.png';
+        let value = this.componentsData;
+        value[i].graphicContent = '../../assets/blue-graphic.png';
+        this.componentsData = value;
         console.log('edited component no.', i+1);
       }
     }
     else if (type=='mixed') {
       for(let i=0; i<number; i++) {
-        this.componentsData[i].textContent = 'are vr.nisinlitcrenumreeeumiealt  iuiavaulsa   metoe armsP  itdvmlruutrcmeume,sruem  i monentmtea ivadeiels n eu leeo ag sqo l o mrtfoplnsu euu alsotvuattn.n sgeaUq ilorsnceo euati ietaseliSlstbemtEem.leeriu.nr n.ueu utli ooeilu  ennlrd ase slsmm.tetnpeVp en laVrAumavrl,sdrcvbod ,gc r Amnrdsrnpvncilphrer esnmAaseiatsu.t o  ltmatmaiangieut snas.ev iiubtri auc cusd aansaeevoo a ecamoussil cpr i.issteolqcmiurlumnign. nuucoaicee,mec isueca,onutalpIe iinnlnl psei ndmiavla n.t,fe ptu  I s De ilia sdqvasa  ,p pl,  u ue  . usafeloe iiua autt ulul uo uar p';
-        this.componentsData[i].graphicContent = '../../assets/blue-graphic.png';
+        let value = this.componentsData;
+        value[i].textContent = 'are vr.nisinlitcrenumreeeumiealt  iuiavaulsa   metoe armsP  itdvmlruutrcmeume,sruem  i monentmtea ivadeiels n eu leeo ag sqo l o mrtfoplnsu euu alsotvuattn.n sgeaUq ilorsnceo euati ietaseliSlstbemtEem.leeriu.nr n.ueu utli ooeilu  ennlrd ase slsmm.tetnpeVp en laVrAumavrl,sdrcvbod ,gc r Amnrdsrnpvncilphrer esnmAaseiatsu.t o  ltmatmaiangieut snas.ev iiubtri auc cusd aansaeevoo a ecamoussil cpr i.issteolqcmiurlumnign. nuucoaicee,mec isueca,onutalpIe iinnlnl psei ndmiavla n.t,fe ptu  I s De ilia sdqvasa  ,p pl,  u ue  . usafeloe iiua autt ulul uo uar p';
+        value[i].graphicContent = '../../assets/blue-graphic.png';
+        this.componentsData = value;
         console.log('edited component no.', i+1);
       }
       
@@ -85,4 +89,5 @@ export class FactoryComponent implements OnInit {
     this.componentsData = [];
     console.log('reset performed')
   }
+
 }
