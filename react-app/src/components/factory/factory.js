@@ -176,7 +176,7 @@ export default class Factory extends React.Component {
                     <div>
                         {
                             this.state.componentsData.map((componentData, index) => {
-                                return <FactoryTestItem key={index} componentData={componentData} />
+                                return <FactoryTestItem key={index} index={index} textContent={componentData.textContent} graphicContent={componentData.graphicContent} />
                             })
                         }
                     </div>
