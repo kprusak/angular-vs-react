@@ -90,7 +90,7 @@ export default class Factory extends React.Component {
         for(let i=0; i<number; i++) {
           setTimeout(()=>{
             let value = this.state.componentsData;
-            value.pop();
+            value.shift();
             this.setState({componentsData: value, editTime: 0, destroyTime: this.destroyTime});
             console.log('removed component no.', i+1)
           }, 500)
@@ -111,70 +111,70 @@ export default class Factory extends React.Component {
                 <p className="subheader"><b>Text content components</b></p>
                 <p>Creating</p>
                 <div className="buttons">
-                    <button onClick={() => this.createComponents(100, 'text')}>Create 100 components</button>
                     <button onClick={() => this.createComponents(1000, 'text')}>Create 1000 components</button>
                     <button onClick={() => this.createComponents(10000, 'text')}>Create 10000 components</button>
-                    <button onClick={() => this.createComponents(100000, 'text')}>Create 100000 components</button>
+                    <button onClick={() => this.createComponents(20000, 'text')}>Create 20000 components</button>
+                    <button onClick={() => this.createComponents(30000, 'text')}>Create 30000 components</button>
                 </div>
                 <p>Editing</p>
                 <div className="buttons">
-                    <button onClick={() => this.editComponents(100, 'text')}>Edit 100 components</button>
                     <button onClick={() => this.editComponents(1000, 'text')}>Edit 1000 components</button>
                     <button onClick={() => this.editComponents(10000, 'text')}>Edit 10000 components</button>
-                    <button onClick={() => this.editComponents(100000, 'text')}>Edit 100000 components</button>
+                    <button onClick={() => this.editComponents(20000, 'text')}>Edit 20000 components</button>
+                    <button onClick={() => this.editComponents(30000, 'text')}>Edit 30000 components</button>
                 </div>
                 <p>Removing</p>
                 <div className="buttons">
-                    <button onClick={() => this.removeComponents(100)}>Remove 100 components</button>
                     <button onClick={() => this.removeComponents(1000)}>Remove 1000 components</button>
                     <button onClick={() => this.removeComponents(10000)}>Remove 10000 components</button>
-                    <button onClick={() => this.removeComponents(100000)}>Remove 100000 components</button>
+                    <button onClick={() => this.removeComponents(20000)}>Remove 20000 components</button>
+                    <button onClick={() => this.removeComponents(30000)}>Remove 30000 components</button>
                 </div>
 
                 <p className="subheader"><b>Graphic content components</b></p>
                 <p>Creating</p>
                 <div className="buttons">
-                    <button onClick={() => this.createComponents(100, 'graphic')}>Create 100 components</button>
                     <button onClick={() => this.createComponents(1000, 'graphic')}>Create 1000 components</button>
                     <button onClick={() => this.createComponents(10000, 'graphic')}>Create 10000 components</button>
-                    <button onClick={() => this.createComponents(100000, 'graphic')}>Create 100000 components</button>
+                    <button onClick={() => this.createComponents(20000, 'graphic')}>Create 20000 components</button>
+                    <button onClick={() => this.createComponents(30000, 'graphic')}>Create 30000 components</button>
                 </div>
                 <p>Editing</p>
                 <div className="buttons">
-                    <button onClick={() => this.editComponents(100, 'graphic')}>Edit 100 components</button>
                     <button onClick={() => this.editComponents(1000, 'graphic')}>Edit 1000 components</button>
                     <button onClick={() => this.editComponents(10000, 'graphic')}>Edit 10000 components</button>
-                    <button onClick={() => this.editComponents(100000, 'graphic')}>Edit 100000 components</button>
+                    <button onClick={() => this.editComponents(20000, 'graphic')}>Edit 20000 components</button>
+                    <button onClick={() => this.editComponents(30000, 'graphic')}>Edit 30000 components</button>
                 </div>
                 <p>Removing</p>
                 <div className="buttons">
-                    <button onClick={() => this.removeComponents(100)}>Remove 100 components</button>
                     <button onClick={() => this.removeComponents(1000)}>Remove 1000 components</button>
-                    <button onClick={() => this.removeComponents(10000)}>Remove 10000 components</button>
-                    <button onClick={() => this.removeComponents(100000)}>Remove 100000 components</button>
+                    <button onClick={() => this.removeComponents(1000)}>Remove 10000 components</button>
+                    <button onClick={() => this.removeComponents(10000)}>Remove 20000 components</button>
+                    <button onClick={() => this.removeComponents(100000)}>Remove 30000 components</button>
                 </div>
 
                 <p className="subheader"><b>Mixed content components</b></p>
                 <p>Creating</p>
                 <div className="buttons">
-                    <button onClick={() => this.createComponents(100, 'mixed')}>Create 100 components</button>
                     <button onClick={() => this.createComponents(1000, 'mixed')}>Create 1000 components</button>
                     <button onClick={() => this.createComponents(10000, 'mixed')}>Create 10000 components</button>
-                    <button onClick={() => this.createComponents(100000, 'mixed')}>Create 100000 components</button>
+                    <button onClick={() => this.createComponents(20000, 'mixed')}>Create 20000 components</button>
+                    <button onClick={() => this.createComponents(30000, 'mixed')}>Create 30000 components</button>
                 </div>
                 <p>Editing</p>
                 <div className="buttons">
-                    <button onClick={() => this.editComponents(100, 'mixed')}>Edit 100 components</button>
                     <button onClick={() => this.editComponents(1000, 'mixed')}>Edit 1000 components</button>
                     <button onClick={() => this.editComponents(10000, 'mixed')}>Edit 10000 components</button>
-                    <button onClick={() => this.editComponents(100000, 'mixed')}>Edit 100000 components</button>
+                    <button onClick={() => this.editComponents(20000, 'mixed')}>Edit 20000 components</button>
+                    <button onClick={() => this.editComponents(30000, 'mixed')}>Edit 30000 components</button>
                 </div>
                 <p>Removing</p>
                 <div className="buttons">
-                    <button onClick={() => this.removeComponents(100)}>Remove 100 components</button>
                     <button onClick={() => this.removeComponents(1000)}>Remove 1000 components</button>
                     <button onClick={() => this.removeComponents(10000)}>Remove 10000 components</button>
-                    <button onClick={() => this.removeComponents(100000)}>Remove 100000 components</button>
+                    <button onClick={() => this.removeComponents(20000)}>Remove 20000 components</button>
+                    <button onClick={() => this.removeComponents(30000)}>Remove 30000 components</button>
                 </div>
 
                 <div className="components">
