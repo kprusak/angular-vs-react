@@ -75,7 +75,7 @@
 
     <div class="components">
         <div *ngFor="let componentData of componentsData; index as i">
-            <app-factory-test-item [textContent]="componentData.textContent" [graphicContent]="componentData.graphicContent" [index]="i"></app-factory-test-item>
+            <app-factory-test-item [textContent]="componentData.textContent" [graphicContent]="componentData.graphicContent" [index]="i" [editTime]="editTime" [destroyTime]="sdestroyTime"></app-factory-test-item>
         </div>
     </div>
 

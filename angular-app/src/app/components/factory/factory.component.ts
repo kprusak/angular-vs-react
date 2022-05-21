@@ -11,6 +11,8 @@ export class FactoryComponent implements OnInit {
   ngOnInit(): void {}
 
   componentsData: Array<{textContent?: string, graphicContent?: string}> = [];
+  editTime: number;
+  sdestroyTime: number;
 
   createComponents(number: number, type: string) {
     console.log('started adding components')
@@ -48,6 +50,7 @@ export class FactoryComponent implements OnInit {
   }
 
   editComponents(number: number, type: string) {
+    this.editTime = window.performance.now();
     console.log('started editing components');
     if(type=='text') {
       for(let i=0; i<number; i++) {
@@ -73,9 +76,12 @@ export class FactoryComponent implements OnInit {
   }
 
   removeComponents(number: number) {
+    this.sdestroyTime = window.performance.now();
     for(let i=0; i<number; i++) {
-      this.componentsData.pop();
-      console.log('removed component no.', i+1)
+      setTimeout(()=>{
+        this.componentsData.pop();
+        console.log('removed component no.', i+1)
+      },3000)
     }
   }
 

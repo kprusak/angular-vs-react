@@ -4,7 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
   selector: 'app-factory-test-item',
   templateUrl: './factory-test-item.component.html',
   styleUrls: ['./factory-test-item.component.css'],
-  inputs: ['componentData', 'index', 'textContent', 'graphicContent']
+  inputs: ['index', 'textContent', 'graphicContent', 'editTime', 'destroyTime']
 })
 export class FactoryTestItemComponent implements OnInit {
 
@@ -16,45 +16,40 @@ export class FactoryTestItemComponent implements OnInit {
   initTime! : number
   contentInitTime! : number
   viewInitTime! : number
-  
-  printTime(time : number, moment: string) {
-    //console.log(`(${ this.index+1 }) ${ moment }: Global loading ${ time }ms`)
-    //console.log(`${ moment }: Global loading ${ time / 1000 }s`)
-    console.log(`(${ this.index+1 }) ${ moment }: Component loading ${ time - this.startTime }ms`)
-    //console.log(`${ moment }: Component loading ${ (time - this.startTime) / 1000 }s`)
-  }
+  onChangesTime! : number;
+  onDestroyTime! : number;
+
+  editTime! : number;
+  destroyTime! : number;
 
   // Created
   constructor() {
     this.startTime = window.performance.now()
-    //this.printTime(this.startTime, 'constructor')
   }
 
   // Initialized by Angular
   ngOnInit() {
     this.initTime = window.performance.now()
-    //this.printTime(this.initTime, 'onInit')
   }
 
   // Rendered without children
   ngAfterContentInit() {
     this.contentInitTime = window.performance.now()
-    //this.printTime(this.contentInitTime, 'afterContentInit')
   }
 
   // Rendered with children
   ngAfterViewInit() {
-    this.viewInitTime = window.performance.now()
-    this.printTime(this.viewInitTime, 'afterViewInit')
+    this.viewInitTime = window.performance.now();
+    console.log(`(${ this.index+1 }) ngAfterViewInit: Component loading ${ this.viewInitTime - this.startTime }ms`);
   }
 
   ngOnChanges(){
-    this.viewInitTime = window.performance.now()
-    this.printTime(this.viewInitTime, 'onChanges')
+    this.onChangesTime = window.performance.now()
+    console.log(`(${ this.index+1 }) ngOnChanges: Component loading ${ this.onChangesTime - this.editTime }ms`);
   }
 
   ngOnDestroy(){
-    this.viewInitTime = window.performance.now()
-    this.printTime(this.viewInitTime, 'onDestroy')
+    this.onDestroyTime = window.performance.now()
+    console.log(`(${ this.index+1 }) ngOnDestroy: Component loading ${ this.onDestroyTime - this.destroyTime - 3000 }ms`);
   }
 }
