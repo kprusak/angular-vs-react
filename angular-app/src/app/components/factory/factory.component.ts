@@ -12,7 +12,7 @@ export class FactoryComponent implements OnInit {
 
   componentsData: Array<{textContent?: string, graphicContent?: string}> = [];
   editTime: number;
-  sdestroyTime: number;
+  destroyTime: number;
 
   createComponents(number: number, type: string) {
     console.log('started adding components')
@@ -76,12 +76,12 @@ export class FactoryComponent implements OnInit {
   }
 
   removeComponents(number: number) {
-    this.sdestroyTime = window.performance.now();
+    this.destroyTime = window.performance.now();
     for(let i=0; i<number; i++) {
       setTimeout(()=>{
         this.componentsData.pop();
         console.log('removed component no.', i+1)
-      },3000)
+      },500)
     }
   }
 

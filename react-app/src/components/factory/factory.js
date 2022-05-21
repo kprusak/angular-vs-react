@@ -7,7 +7,9 @@ export default class Factory extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            componentsData: []
+            componentsData: [],
+            editTime: 0,
+            destroyTime: 0
         }
     }
 
@@ -21,7 +23,7 @@ export default class Factory extends React.Component {
                 textContent: 'Ut ligula est, eleifend suscipit elit et, lobortis rhoncus orci. Suspendisse quis mauris vitae dolor lacinia ullamcorper mattis at elit. In accumsan odio non lacus ornare volutpat. Integer sit amet purus tellus. Vivamus eu eros accumsan, lacinia purus eu, venenatis ipsum. Aenean varius gravida pulvinar. Aliquam erat volutpat. Vivamus non ullamcorper ligula. Duis fermentum elementum neque vel semper. Aenean quis mauris augue. Etiam vel diam dictum, bibendum nunc non, molestie lacus. Praesent sem leo, elementum id nulla vitae, laoreet posuere felis.'
               }
             )
-            this.setState({componentsData: value});
+            this.setState({componentsData: value, editTime: 0, destroyTime: 0});
             console.log('added component no.', i+1);
           }
         }
@@ -33,7 +35,7 @@ export default class Factory extends React.Component {
                 graphicContent: './hot-tasty-pizza.jpg'
               }
             )
-            this.setState({componentsData: value});
+            this.setState({componentsData: value, editTime: 0, destroyTime: 0});
             console.log('added component no.', i+1);
           }
         }
@@ -46,7 +48,7 @@ export default class Factory extends React.Component {
                 graphicContent: 'hot-tasty-pizza.jpg'
               }
             )
-            this.setState({componentsData: value});
+            this.setState({componentsData: value, editTime: 0, destroyTime: 0});
             console.log('added component no.', i+1);
           }
         }
@@ -58,7 +60,7 @@ export default class Factory extends React.Component {
           for(let i=0; i<number; i++) {
             let value = this.state.componentsData;
             value[i].textContent = 'are vr.nisinlitcrenumreeeumiealt  iuiavaulsa   metoe armsP  itdvmlruutrcmeume,sruem  i monentmtea ivadeiels n eu leeo ag sqo l o mrtfoplnsu euu alsotvuattn.n sgeaUq ilorsnceo euati ietaseliSlstbemtEem.leeriu.nr n.ueu utli ooeilu  ennlrd ase slsmm.tetnpeVp en laVrAumavrl,sdrcvbod ,gc r Amnrdsrnpvncilphrer esnmAaseiatsu.t o  ltmatmaiangieut snas.ev iiubtri auc cusd aansaeevoo a ecamoussil cpr i.issteolqcmiurlumnign. nuucoaicee,mec isueca,onutalpIe iinnlnl psei ndmiavla n.t,fe ptu  I s De ilia sdqvasa  ,p pl,  u ue  . usafeloe iiua autt ulul uo uar p';
-            this.setState({componentsData: value});
+            this.setState({componentsData: value, editTime: window.performance.now(), destroyTime: 0});
             console.log('edited component no.', i+1);
           }
         }
@@ -66,7 +68,7 @@ export default class Factory extends React.Component {
           for(let i=0; i<number; i++) {
             let value = this.state.componentsData;
             value[i].graphicContent = './blue-graphic.png';
-            this.setState({componentsData: value});
+            this.setState({componentsData: value, editTime: window.performance.now(), destroyTime: 0});
             console.log('edited component no.', i+1);
           }
         }
@@ -75,7 +77,7 @@ export default class Factory extends React.Component {
             let value = this.state.componentsData;
             value[i].graphicContent = './blue-graphic.png';
             value[i].textContent = 'are vr.nisinlitcrenumreeeumiealt  iuiavaulsa   metoe armsP  itdvmlruutrcmeume,sruem  i monentmtea ivadeiels n eu leeo ag sqo l o mrtfoplnsu euu alsotvuattn.n sgeaUq ilorsnceo euati ietaseliSlstbemtEem.leeriu.nr n.ueu utli ooeilu  ennlrd ase slsmm.tetnpeVp en laVrAumavrl,sdrcvbod ,gc r Amnrdsrnpvncilphrer esnmAaseiatsu.t o  ltmatmaiangieut snas.ev iiubtri auc cusd aansaeevoo a ecamoussil cpr i.issteolqcmiurlumnign. nuucoaicee,mec isueca,onutalpIe iinnlnl psei ndmiavla n.t,fe ptu  I s De ilia sdqvasa  ,p pl,  u ue  . usafeloe iiua autt ulul uo uar p';
-            this.setState({componentsData: value});
+            this.setState({componentsData: value, editTime: window.performance.now(), destroyTime: 0});
             console.log('edited component no.', i+1);
           }
           
@@ -84,11 +86,14 @@ export default class Factory extends React.Component {
       }
     
       removeComponents = (number) => {
+        this.destroyTime = window.performance.now();
         for(let i=0; i<number; i++) {
+          setTimeout(()=>{
             let value = this.state.componentsData;
             value.pop();
-            this.setState({componentsData: value});
+            this.setState({componentsData: value, editTime: 0, destroyTime: this.destroyTime});
             console.log('removed component no.', i+1)
+          }, 500)
         }
       }
     
@@ -176,7 +181,7 @@ export default class Factory extends React.Component {
                     <div>
                         {
                             this.state.componentsData.map((componentData, index) => {
-                                return <FactoryTestItem key={index} index={index} textContent={componentData.textContent} graphicContent={componentData.graphicContent} />
+                                return <FactoryTestItem key={index} index={index} textContent={componentData.textContent} graphicContent={componentData.graphicContent} editTime={this.state.editTime} destroyTime={this.state.destroyTime} />
                             })
                         }
                     </div>

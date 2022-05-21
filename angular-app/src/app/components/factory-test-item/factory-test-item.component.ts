@@ -50,6 +50,6 @@ export class FactoryTestItemComponent implements OnInit {
 
   ngOnDestroy(){
     this.onDestroyTime = window.performance.now()
-    console.log(`(${ this.index+1 }) ngOnDestroy: Component loading ${ this.onDestroyTime - this.destroyTime - 3000 }ms`);
+    console.log(`ngOnDestroy: Component loading ${ this.onDestroyTime - this.destroyTime - 500 }ms`);
   }
 }

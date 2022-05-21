@@ -10,13 +10,6 @@ export default class FactoryTestItem extends React.Component {
     updateTime;
     unmountTime;
 
-    printTime(time, moment) {
-        //console.log(`(${ this.props.index+1 }) ${ moment }: Global loading ${ time }ms`)
-        //console.log(`${ moment }: Global loading ${ time / 1000 }s`)
-        console.log(`(${ this.props.index+1 }) ${ moment }: Component loading ${ time - this.startTime }ms`)
-        //console.log(`${ moment }: Component loading ${ (time - this.startTime) / 1000 }s`)
-    }
-
     constructor(){
         super();
         this.startTime = window.performance.now();
@@ -24,17 +17,17 @@ export default class FactoryTestItem extends React.Component {
 
     componentDidMount(){
         this.mountTime = window.performance.now();
-        this.printTime(this.mountTime, 'mount')
+        console.log(`(${ this.props.index+1 }) componentDidMount: Component loading ${ this.mountTime - this.startTime }ms`)
     }
 
     componentDidUpdate(){
         this.updateTime = window.performance.now();
-        this.printTime(this.updateTime, 'update')
+        console.log(`(${ this.props.index+1 }) componentDidUpdate: Component loading ${ this.updateTime - this.props.editTime }ms`)
     }
 
     componentWillUnmount(){
         this.unmountTime = window.performance.now();
-        this.printTime(this.unmountTime, 'unmount')
+        console.log(`componentWillUnmount: Component loading ${ this.unmountTime - this.props.destroyTime - 500 }ms`)
     }
 
 
