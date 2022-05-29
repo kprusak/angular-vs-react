@@ -13,10 +13,10 @@ export default class Factory extends React.Component {
         }
     }
 
-    createComponents = (number, type) => {
+      createComponents = (number, type) => {
         console.log('started adding components')
-        if(type==='text') {
-          for(let i=0; i<number; i++) {
+        for(let i=0; i<number; i++) {
+          if(type=='text') {
             let value = this.state.componentsData;
             value.push(
               {
@@ -24,11 +24,8 @@ export default class Factory extends React.Component {
               }
             )
             this.setState({componentsData: value, editTime: 0, destroyTime: 0});
-            console.log('added component no.', i+1);
           }
-        }
-        else if (type==='graphic') {
-          for(let i=0; i<number; i++) {
+          else if(type=='graphic') {
             let value = this.state.componentsData;
             value.push(
               {
@@ -36,11 +33,8 @@ export default class Factory extends React.Component {
               }
             )
             this.setState({componentsData: value, editTime: 0, destroyTime: 0});
-            console.log('added component no.', i+1);
-          }
-        }
-        else if (type==='mixed') {
-          for(let i=0; i<number; i++) {
+          } 
+          else if(type=='mixed') {
             let value = this.state.componentsData;
             value.push(
               {
@@ -49,40 +43,32 @@ export default class Factory extends React.Component {
               }
             )
             this.setState({componentsData: value, editTime: 0, destroyTime: 0});
-            console.log('added component no.', i+1);
           }
+          console.log('added component no.', i+1);
         }
       }
     
       editComponents = (number, type) => {
         console.log('started editing components');
-        if(type==='text') {
-          for(let i=0; i<number; i++) {
+        for(let i=0; i<number; i++) {
+          if(type=='text') {
             let value = this.state.componentsData;
             value[i].textContent = 'are vr.nisinlitcrenumreeeumiealt  iuiavaulsa   metoe armsP  itdvmlruutrcmeume,sruem  i monentmtea ivadeiels n eu leeo ag sqo l o mrtfoplnsu euu alsotvuattn.n sgeaUq ilorsnceo euati ietaseliSlstbemtEem.leeriu.nr n.ueu utli ooeilu  ennlrd ase slsmm.tetnpeVp en laVrAumavrl,sdrcvbod ,gc r Amnrdsrnpvncilphrer esnmAaseiatsu.t o  ltmatmaiangieut snas.ev iiubtri auc cusd aansaeevoo a ecamoussil cpr i.issteolqcmiurlumnign. nuucoaicee,mec isueca,onutalpIe iinnlnl psei ndmiavla n.t,fe ptu  I s De ilia sdqvasa  ,p pl,  u ue  . usafeloe iiua autt ulul uo uar p';
             this.setState({componentsData: value, editTime: window.performance.now(), destroyTime: 0});
-            console.log('edited component no.', i+1);
           }
-        }
-        else if (type==='graphic') {
-          for(let i=0; i<number; i++) {
+          else if(type=='graphic') {
             let value = this.state.componentsData;
             value[i].graphicContent = './blue-graphic.png';
             this.setState({componentsData: value, editTime: window.performance.now(), destroyTime: 0});
-            console.log('edited component no.', i+1);
-          }
-        }
-        else if (type==='mixed') {
-          for(let i=0; i<number; i++) {
+          } 
+          else if(type=='mixed') {
             let value = this.state.componentsData;
             value[i].graphicContent = './blue-graphic.png';
             value[i].textContent = 'are vr.nisinlitcrenumreeeumiealt  iuiavaulsa   metoe armsP  itdvmlruutrcmeume,sruem  i monentmtea ivadeiels n eu leeo ag sqo l o mrtfoplnsu euu alsotvuattn.n sgeaUq ilorsnceo euati ietaseliSlstbemtEem.leeriu.nr n.ueu utli ooeilu  ennlrd ase slsmm.tetnpeVp en laVrAumavrl,sdrcvbod ,gc r Amnrdsrnpvncilphrer esnmAaseiatsu.t o  ltmatmaiangieut snas.ev iiubtri auc cusd aansaeevoo a ecamoussil cpr i.issteolqcmiurlumnign. nuucoaicee,mec isueca,onutalpIe iinnlnl psei ndmiavla n.t,fe ptu  I s De ilia sdqvasa  ,p pl,  u ue  . usafeloe iiua autt ulul uo uar p';
             this.setState({componentsData: value, editTime: window.performance.now(), destroyTime: 0});
-            console.log('edited component no.', i+1);
           }
-          
+          console.log('edited component no.', i+1);
         }
-        
       }
     
       removeComponents = (number) => {
@@ -90,7 +76,7 @@ export default class Factory extends React.Component {
         for(let i=0; i<number; i++) {
           setTimeout(()=>{
             let value = this.state.componentsData;
-            value.shift();
+            value.pop();
             this.setState({componentsData: value, editTime: 0, destroyTime: this.destroyTime});
             console.log('removed component no.', i+1)
           }, 500)
