@@ -7,7 +7,7 @@ export default class BigItem extends React.Component {
         return (
             <div>
                 <div>
-                    <img src={image} alt="big item" width="1500px" height='900px' />
+                    <img src={image} alt="big item"/>
                 </div>
                 <div className="credits">
                     Graphical components credits:

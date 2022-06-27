@@ -13,7 +13,7 @@ export default class App extends React.Component {
         </div>
         <div className="content">
           <Factory />
-          <ToDoList />
+          {/* <ToDoList /> */}
           <BigItem />
         </div>
       </div>
